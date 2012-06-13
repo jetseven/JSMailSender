@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jsmailsender by jetseven</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jsmailsender</h1>
+        <p>A quick SMTP client for iOS and Mac OS X</p>
+        <p class="view"><a href="https://github.com/jetseven/JSMailSender">View the Project on GitHub <small>jetseven/JSMailSender</small></a></p>
+        <ul>
+          <li><a href="https://github.com/jetseven/JSMailSender/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jetseven/JSMailSender/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jetseven/JSMailSender">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>JSMailSender</h1>
+
+<h2>Intro</h2>
+
+<p>JSMailSender is a simple SMTP client for iOS and Mac OS X. If you need to send a quick
+email or two without activating the iOS mail app, this project should help you out. If
+you want to create the next great Mail client in IOS, keep looking. Or better yet,
+fork and extend this project.</p>
+
+<h2>Rationale</h2>
+
+<p>For a while I have been maintaining a <a href="https://github.com/jetseven/skpsmtpmessage">fork</a>
+of the apparently abandoned <a href="http://code.google.com/p/skpsmtpmessage/">skpsmtpmessage</a>. 
+Based on the feedback on that project, it still fills a need. I wasted to make the library work better
+in the background, so I tried to integrate Quinn "The Eskimo!"'s class QRunLoopOperation,
+which elegantly combines NSRunLoop-based APIs with NSOperations. But I was finding it hard
+to make changes cleanly, mostly because of the complex conditional code used to manage the state
+of the SMTP connection. I decided to do away with all the manual condition checking and
+to use the <a href="http://smc.sourceforge.net/">State Machine Compiler</a> to
+generate the complex conditions of an SMTP connection. I decided the result was different
+enough to merit a new project. I hope that by basing the code
+on a state  machine, it will make it easier to accomodate new behaviors from mail server I haven't
+been able to test against.</p>
+
+<h2>Current Status</h2>
+
+<p>The project will build and send mail. I am able to send mail using iCloud (me.com),
+Gmail, and Yahoo! That said, there is still work to do.</p>
+
+<p><strong>Working features</strong></p>
+
+<ul>
+<li>Start TLS</li>
+<li>PLAIN and LOGIN authentication</li>
+<li>Tested on common mail servers.</li>
+</ul><p><strong>Unimplemented or incomplete, but planned</strong></p>
+
+<ul>
+<li>No CRAM-MD5 authentication</li>
+<li>State Machine is incomplete.
+
+<ul>
+<li>Some transitions will leave a stream hanging in the open state.</li>
+<li>Some transitions will throw an exception.</li>
+</ul>
+</li>
+<li>Should be better integrated with the reachability APIs on iOS.</li>
+<li>Gracefully handle network timeouts.</li>
+<li>Documentation</li>
+<li>Better testing</li>
+</ul><p><strong>Non Features</strong></p>
+
+<ul>
+<li>MIME</li>
+<li>POP, IMAP</li>
+<li>SMTP Server</li>
+</ul><h2>Acknowledgments</h2>
+
+<p>Apple DTS in general and Quinn in particular. The QRunLoopOperation class is copied
+without modifications.</p>
+
+<p>Colloquy project, for the Base64 code.</p>
+
+<p>Ian Baird, for sksmtpmessage. Even though I created a new project, I still looked at his
+code for a sanity check.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/jetseven">jetseven</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-32594537-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
