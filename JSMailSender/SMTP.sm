@@ -1,0 +1,143 @@
+%{
+//
+//SMTP FSM
+//
+%}
+
+%start JSSMTPMap::Connecting
+%class JSSMTPConnection
+%header JSSMTPConnection.h
+
+%map JSSMTPMap
+%%
+
+Connecting
+    Entry {
+        connect();
+    }
+    {
+    success
+        WaitingEHLOReply { }
+    failure
+        Disconnected {}
+    error
+        Disconnected {}
+    }
+
+WaitingEHLOReply
+    Entry {
+        sendEHLO();
+    }
+{
+    success [ctxt.tls]
+        WaitingSTARTTLSReply { }
+    success [ctxt.auth]
+        push(JSSMTPAuthMap::StartingAuth) {  }
+    authenticated
+        WaitingMAILReply {}
+    failure
+        ReadyToQuit {}
+}
+
+WaitingMAILReply
+    Entry {
+        sendMAIL();
+    }
+    {
+    success
+        WaitingRCPTReply{ }
+    error
+        nil {}
+    failure
+        Disconnected {}
+}
+
+WaitingRCPTReply
+    Entry {
+        sendRCPT();
+    }
+{
+    success
+        WaitingDATAReply { }
+    error
+        Disconnected {}
+    failure
+        Disconnected {}
+}
+
+WaitingSTARTTLSReply
+    Entry { sendSTARTTLS(); }
+    {
+        success TLSStarting {}
+    }
+
+TLSStarting 
+    Entry { startTLS(); }
+{
+        success WaitingEHLOReply {  }
+}
+
+WaitingDATAReply 
+    Entry { sendDATA(); }
+    {
+        success SendingData { sendMessage(); }
+    }
+
+SendingData {
+    success
+        ReadyToQuit { }
+    error
+        nil {}
+    failure
+        Disconnected { 
+                    sendQUIT();}
+}
+
+ReadyToQuit 
+    Entry { sendQUIT(); }
+{
+    success
+        Disconnected {  }
+}
+
+Disconnected 
+    Entry {
+    disconnect();
+    }
+{
+    Default nil {}
+}
+
+%%
+
+%map JSSMTPAuthMap
+%%
+StartingAuth
+    Entry { sendAUTH(); }
+{
+    success [[ctxt.authMethod isEqualToString:@"CRAM-MD5"]]
+        WaitingCRAMMD5Reply { startCRAMMD5(); }
+    success [[ctxt.authMethod isEqualToString:@"LOGIN"]]
+        WaitingLOGINReply { startLOGIN(); }
+    success [[ctxt.authMethod isEqualToString:@"PLAIN"]]
+        WaitingPLAINReply { startPLAIN(); }
+}
+
+WaitingLOGINReply {
+    success WaitingAuthenticationResult { sendLOGINPassword(); }
+}
+
+WaitingCRAMMD5Reply {
+}
+
+WaitingPLAINReply {
+
+    success pop(authenticated) {}
+    failure pop(failure) {}
+}
+
+WaitingAuthenticationResult {
+    success pop(authenticated) {}
+    failure pop(failure) {}
+}
+%%

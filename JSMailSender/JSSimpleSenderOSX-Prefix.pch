@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'JSSimpleSenderOSX' target in the 'JSSimpleSenderOSX' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
