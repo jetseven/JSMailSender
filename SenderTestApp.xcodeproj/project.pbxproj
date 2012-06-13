@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAEF591B1587C54F007CA49A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEF591A1587C54F007CA49A /* UIKit.framework */; };
+		AAEF591D1587C54F007CA49A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEF591C1587C54F007CA49A /* Foundation.framework */; };
+		AAEF59251587C550007CA49A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAEF59231587C550007CA49A /* InfoPlist.strings */; };
+		AAEF59271587C550007CA49A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEF59261587C550007CA49A /* main.m */; };
+		AAEF592B1587C550007CA49A /* JSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEF592A1587C550007CA49A /* JSAppDelegate.m */; };
+		AAEF592E1587C550007CA49A /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEF592D1587C550007CA49A /* JSViewController.m */; };
+		AAEF59311587C550007CA49A /* JSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEF592F1587C550007CA49A /* JSViewController.xib */; };
+		AAF984B91589055D001E984A /* libJSMailSender.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF984B0158904BF001E984A /* libJSMailSender.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAF984AF158904BF001E984A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA8FD32E1587CA8E0001DB4F /* JSMailSender.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA79133F157A5ED0002287EE;
+			remoteInfo = JSMailSender;
+		};
+		AAF984B1158904BF001E984A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA8FD32E1587CA8E0001DB4F /* JSMailSender.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA79134F157A5ED0002287EE;
+			remoteInfo = JSMailSenderTests;
+		};
+		AAF984B3158904BF001E984A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA8FD32E1587CA8E0001DB4F /* JSMailSender.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA7913C5158124EA002287EE;
+			remoteInfo = JSMailSenderOSX;
+		};
+		AAF984B5158904BF001E984A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA8FD32E1587CA8E0001DB4F /* JSMailSender.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA7913DB158124EE002287EE;
+			remoteInfo = JSMailSenderOSXTests;
+		};
+		AAF984B7158904FA001E984A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA8FD32E1587CA8E0001DB4F /* JSMailSender.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AA79133E157A5ED0002287EE;
+			remoteInfo = JSMailSender;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA8FD32E1587CA8E0001DB4F /* JSMailSender.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = JSMailSender.xcodeproj; sourceTree = "<group>"; };
+		AA8FD3441587CFCD0001DB4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AAEF59161587C54F007CA49A /* SenderTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SenderTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAEF591A1587C54F007CA49A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AAEF591C1587C54F007CA49A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AAEF591E1587C54F007CA49A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AAEF59221587C550007CA49A /* SenderTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SenderTestApp-Info.plist"; sourceTree = "<group>"; };
+		AAEF59241587C550007CA49A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AAEF59261587C550007CA49A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAEF59281587C550007CA49A /* SenderTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SenderTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		AAEF59291587C550007CA49A /* JSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSAppDelegate.h; sourceTree = "<group>"; };
+		AAEF592A1587C550007CA49A /* JSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAppDelegate.m; sourceTree = "<group>"; };
+		AAEF592C1587C550007CA49A /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
+		AAEF592D1587C550007CA49A /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
+		AAEF59301587C550007CA49A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JSViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAEF59131587C54F007CA49A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF984B91589055D001E984A /* libJSMailSender.a in Frameworks */,
+				AAEF591B1587C54F007CA49A /* UIKit.framework in Frameworks */,
+				AAEF591D1587C54F007CA49A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAEF590B1587C54F007CA49A = {
+			isa = PBXGroup;
+			children = (
+				AAEF59201587C550007CA49A /* SenderTestApp */,
+				AAEF59191587C54F007CA49A /* Frameworks */,
+				AAEF59171587C54F007CA49A /* Products */,
+				AA8FD32E1587CA8E0001DB4F /* JSMailSender.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		AAEF59171587C54F007CA49A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAEF59161587C54F007CA49A /* SenderTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAEF59191587C54F007CA49A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA8FD3441587CFCD0001DB4F /* Security.framework */,
+				AAEF591A1587C54F007CA49A /* UIKit.framework */,
+				AAEF591C1587C54F007CA49A /* Foundation.framework */,
+				AAEF591E1587C54F007CA49A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAEF59201587C550007CA49A /* SenderTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				AAEF59291587C550007CA49A /* JSAppDelegate.h */,
+				AAEF592A1587C550007CA49A /* JSAppDelegate.m */,
+				AAEF592C1587C550007CA49A /* JSViewController.h */,
+				AAEF592D1587C550007CA49A /* JSViewController.m */,
+				AAEF592F1587C550007CA49A /* JSViewController.xib */,
+				AAEF59211587C550007CA49A /* Supporting Files */,
+			);
+			path = SenderTestApp;
+			sourceTree = "<group>";
+		};
+		AAEF59211587C550007CA49A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAEF59221587C550007CA49A /* SenderTestApp-Info.plist */,
+				AAEF59231587C550007CA49A /* InfoPlist.strings */,
+				AAEF59261587C550007CA49A /* main.m */,
+				AAEF59281587C550007CA49A /* SenderTestApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAF984A9158904BF001E984A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAF984B0158904BF001E984A /* libJSMailSender.a */,
+				AAF984B2158904BF001E984A /* JSMailSenderTests.octest */,
+				AAF984B4158904BF001E984A /* JSMailSenderOSX.framework */,
+				AAF984B6158904BF001E984A /* JSMailSenderOSXTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAEF59151587C54F007CA49A /* SenderTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAEF59341587C550007CA49A /* Build configuration list for PBXNativeTarget "SenderTestApp" */;
+			buildPhases = (
+				AAEF59121587C54F007CA49A /* Sources */,
+				AAEF59131587C54F007CA49A /* Frameworks */,
+				AAEF59141587C54F007CA49A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAF984B8158904FA001E984A /* PBXTargetDependency */,
+			);
+			name = SenderTestApp;
+			productName = SenderTestApp;
+			productReference = AAEF59161587C54F007CA49A /* SenderTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAEF590D1587C54F007CA49A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JS;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = AAEF59101587C54F007CA49A /* Build configuration list for PBXProject "SenderTestApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AAEF590B1587C54F007CA49A;
+			productRefGroup = AAEF59171587C54F007CA49A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AAF984A9158904BF001E984A /* Products */;
+					ProjectRef = AA8FD32E1587CA8E0001DB4F /* JSMailSender.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AAEF59151587C54F007CA49A /* SenderTestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AAF984B0158904BF001E984A /* libJSMailSender.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJSMailSender.a;
+			remoteRef = AAF984AF158904BF001E984A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAF984B2158904BF001E984A /* JSMailSenderTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JSMailSenderTests.octest;
+			remoteRef = AAF984B1158904BF001E984A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAF984B4158904BF001E984A /* JSMailSenderOSX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSMailSenderOSX.framework;
+			remoteRef = AAF984B3158904BF001E984A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAF984B6158904BF001E984A /* JSMailSenderOSXTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JSMailSenderOSXTests.octest;
+			remoteRef = AAF984B5158904BF001E984A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAEF59141587C54F007CA49A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAEF59251587C550007CA49A /* InfoPlist.strings in Resources */,
+				AAEF59311587C550007CA49A /* JSViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAEF59121587C54F007CA49A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAEF59271587C550007CA49A /* main.m in Sources */,
+				AAEF592B1587C550007CA49A /* JSAppDelegate.m in Sources */,
+				AAEF592E1587C550007CA49A /* JSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAF984B8158904FA001E984A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSMailSender;
+			targetProxy = AAF984B7158904FA001E984A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AAEF59231587C550007CA49A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAEF59241587C550007CA49A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AAEF592F1587C550007CA49A /* JSViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAEF59301587C550007CA49A /* en */,
+			);
+			name = JSViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAEF59321587C550007CA49A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JSSImpleSender";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AAEF59331587C550007CA49A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JSSImpleSender";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAEF59351587C550007CA49A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SenderTestApp/SenderTestApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JSMailSender";
+				INFOPLIST_FILE = "SenderTestApp/SenderTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AAEF59361587C550007CA49A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SenderTestApp/SenderTestApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JSMailSender";
+				INFOPLIST_FILE = "SenderTestApp/SenderTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAEF59101587C54F007CA49A /* Build configuration list for PBXProject "SenderTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAEF59321587C550007CA49A /* Debug */,
+				AAEF59331587C550007CA49A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAEF59341587C550007CA49A /* Build configuration list for PBXNativeTarget "SenderTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAEF59351587C550007CA49A /* Debug */,
+				AAEF59361587C550007CA49A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAEF590D1587C54F007CA49A /* Project object */;
+}
