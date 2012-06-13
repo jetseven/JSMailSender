@@ -1,0 +1,1708 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>JSSMTPConnection Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">JSMailSender </a></h1>
+				<a id="developerHome" href="../index.html">Jetseven</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">JSSMTPConnection Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/lastReponse">&nbsp;&nbsp;&nbsp;&nbsp;lastReponse</option>
+	
+	<option value="//api/name/message">&nbsp;&nbsp;&nbsp;&nbsp;message</option>
+	
+	<option value="//api/name/password">&nbsp;&nbsp;&nbsp;&nbsp;password</option>
+	
+	<option value="//api/name/port">&nbsp;&nbsp;&nbsp;&nbsp;port</option>
+	
+	<option value="//api/name/recipientEmail">&nbsp;&nbsp;&nbsp;&nbsp;recipientEmail</option>
+	
+	<option value="//api/name/relayHost">&nbsp;&nbsp;&nbsp;&nbsp;relayHost</option>
+	
+	<option value="//api/name/senderEmail">&nbsp;&nbsp;&nbsp;&nbsp;senderEmail</option>
+	
+	<option value="//api/name/username">&nbsp;&nbsp;&nbsp;&nbsp;username</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/begin">&nbsp;&nbsp;&nbsp;&nbsp;- begin</option>
+	
+	<option value="//api/name/connect">&nbsp;&nbsp;&nbsp;&nbsp;- connect</option>
+	
+	<option value="//api/name/disconnect">&nbsp;&nbsp;&nbsp;&nbsp;- disconnect</option>
+	
+	<option value="//api/name/initWithRelay:port:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRelay:port:</option>
+	
+	<option value="//api/name/initWithRelay:port:recipient:sender:message:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRelay:port:recipient:sender:message:</option>
+	
+	<option value="//api/name/sendAUTH">&nbsp;&nbsp;&nbsp;&nbsp;- sendAUTH</option>
+	
+	<option value="//api/name/sendDATA">&nbsp;&nbsp;&nbsp;&nbsp;- sendDATA</option>
+	
+	<option value="//api/name/sendEHLO">&nbsp;&nbsp;&nbsp;&nbsp;- sendEHLO</option>
+	
+	<option value="//api/name/sendLOGINPassword">&nbsp;&nbsp;&nbsp;&nbsp;- sendLOGINPassword</option>
+	
+	<option value="//api/name/sendMAIL">&nbsp;&nbsp;&nbsp;&nbsp;- sendMAIL</option>
+	
+	<option value="//api/name/sendMessage">&nbsp;&nbsp;&nbsp;&nbsp;- sendMessage</option>
+	
+	<option value="//api/name/sendQUIT">&nbsp;&nbsp;&nbsp;&nbsp;- sendQUIT</option>
+	
+	<option value="//api/name/sendRCPT">&nbsp;&nbsp;&nbsp;&nbsp;- sendRCPT</option>
+	
+	<option value="//api/name/sendSTARTTLS">&nbsp;&nbsp;&nbsp;&nbsp;- sendSTARTTLS</option>
+	
+	<option value="//api/name/startCRAMMD5">&nbsp;&nbsp;&nbsp;&nbsp;- startCRAMMD5</option>
+	
+	<option value="//api/name/startLOGIN">&nbsp;&nbsp;&nbsp;&nbsp;- startLOGIN</option>
+	
+	<option value="//api/name/startPLAIN">&nbsp;&nbsp;&nbsp;&nbsp;- startPLAIN</option>
+	
+	<option value="//api/name/startTLS">&nbsp;&nbsp;&nbsp;&nbsp;- startTLS</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing Connections">Creating and Initializing Connections</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing the connection">Managing the connection</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_SMTP commnds">SMTP commnds</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Authentication">Authentication</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastReponse">lastReponse</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/message">message</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/password">password</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/port">port</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recipientEmail">recipientEmail</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/relayHost">relayHost</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/senderEmail">senderEmail</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/username">username</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/begin">begin</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connect">connect</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disconnect">disconnect</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRelay:port:">initWithRelay:port:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRelay:port:recipient:sender:message:">initWithRelay:port:recipient:sender:message:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendAUTH">sendAUTH</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendDATA">sendDATA</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendEHLO">sendEHLO</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendLOGINPassword">sendLOGINPassword</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendMAIL">sendMAIL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendMessage">sendMessage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendQUIT">sendQUIT</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendRCPT">sendRCPT</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendSTARTTLS">sendSTARTTLS</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startCRAMMD5">startCRAMMD5</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLOGIN">startLOGIN</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPLAIN">startPLAIN</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startTLS">startTLS</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="JSSMTPConnection Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">JSSMTPConnection Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">JSStreamOperationDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">JSSMTPConnection.h<br />JSSMTPConnection.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>JSSMTPConnection objects are meant to be one-use objects used to send mail. The basic use of this class is
+to populate all the propertes with the necessary values and then send the using the methods mapped to the basic
+SMTP commands.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lastReponse">&nbsp;&nbsp;lastReponse</a></code>
+		<span class="tooltip"><p>The full text of the previous response</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/relayHost">&nbsp;&nbsp;relayHost</a></code>
+		<span class="tooltip"><p>The host name of the SMTP relay</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/port">&nbsp;&nbsp;port</a></code>
+		<span class="tooltip"><p>The TCP port to <a href="#//api/name/connect">connect</a> to</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/senderEmail">&nbsp;&nbsp;senderEmail</a></code>
+		<span class="tooltip"><p>The email sender address</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/recipientEmail">&nbsp;&nbsp;recipientEmail</a></code>
+		<span class="tooltip"><p>The recipients email address</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
+		<span class="tooltip"><p>The contets of the message to send</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/username">&nbsp;&nbsp;username</a></code>
+		<span class="tooltip"><p>The username for SMTP authentication</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/password">&nbsp;&nbsp;password</a></code>
+		<span class="tooltip"><p>The password for SMTP authentication</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing Connections" name="task_Creating and Initializing Connections"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing Connections</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithRelay:port:">&ndash;&nbsp;initWithRelay:port:</a></code>
+		<span class="tooltip"><p>The fully qualified domain name of the SMTP service.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithRelay:port:recipient:sender:message:">&ndash;&nbsp;initWithRelay:port:recipient:sender:message:</a></code>
+		<span class="tooltip"><p>The fully qualified domain name of the SMTP service.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Managing the connection" name="task_Managing the connection"></a>
+						<h3 class="subsubtitle task-title">Managing the connection</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/begin">&ndash;&nbsp;begin</a></code>
+		<span class="tooltip"><p>Begin the finite state machine.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/connect">&ndash;&nbsp;connect</a></code>
+		<span class="tooltip"><p>Begin the connection. This will attempt to open the streams to the registered server and <a href="#//api/name/port">port</a></p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disconnect">&ndash;&nbsp;disconnect</a></code>
+		<span class="tooltip"><p>Close the connection and shut down the streams. Once the streams are shut down, you need to create a new object to start again.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startTLS">&ndash;&nbsp;startTLS</a></code>
+		<span class="tooltip"><p>Switches the state of the streams to sup<a href="#//api/name/port">port</a> TLSv1. This can be done during an active connection, such as during a STARTTLS connection</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="SMTP commnds" name="task_SMTP commnds"></a>
+						<h3 class="subsubtitle task-title">SMTP commnds</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendEHLO">&ndash;&nbsp;sendEHLO</a></code>
+		<span class="tooltip"><p>Sends an EHLO command using the local name</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendMAIL">&ndash;&nbsp;sendMAIL</a></code>
+		<span class="tooltip"><p>Sends a MAIL FROM:<sender> command</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendRCPT">&ndash;&nbsp;sendRCPT</a></code>
+		<span class="tooltip"><p>Sends a RCPT TO:<recipient> command</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendSTARTTLS">&ndash;&nbsp;sendSTARTTLS</a></code>
+		<span class="tooltip"><p>Sends a STARTTLS to the server.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendQUIT">&ndash;&nbsp;sendQUIT</a></code>
+		<span class="tooltip"><p>Sends a QUIT command to the server. Note that the stream must be disconnected separately.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendAUTH">&ndash;&nbsp;sendAUTH</a></code>
+		<span class="tooltip"><p>Sends an AUTH command, with the parameter based on the value stored in authMethod</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendDATA">&ndash;&nbsp;sendDATA</a></code>
+		<span class="tooltip"><p>Send the Data</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendMessage">&ndash;&nbsp;sendMessage</a></code>
+		<span class="tooltip"><p>send the contents of the <a href="#//api/name/message">message</a>. This method automatically appends a CRLF.CRLF string at the end to
+mark the end of the <a href="#//api/name/message">message</a> to the server</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Authentication" name="task_Authentication"></a>
+						<h3 class="subsubtitle task-title">Authentication</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startCRAMMD5">&ndash;&nbsp;startCRAMMD5</a></code>
+		<span class="tooltip"><p>Starts a CRAM-MD5 authentication process. Currently unimplimented.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startPLAIN">&ndash;&nbsp;startPLAIN</a></code>
+		<span class="tooltip"><p>Starts PLAIN login proces. The PLAIN login process is single-step, sending both <a href="#//api/name/username">username</a> and <a href="#//api/name/password">password</a> in a single transaction.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startLOGIN">&ndash;&nbsp;startLOGIN</a></code>
+		<span class="tooltip"><p>Starts a LOGIN process. The LOGIN method is a two-step process. This step sends the <a href="#//api/name/username">username</a>. <a href="#//api/name/sendLOGINPassword">sendLOGINPassword</a> sends the <a href="#//api/name/password">password</a> once the <a href="#//api/name/username">username</a> has been accepted.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendLOGINPassword">&ndash;&nbsp;sendLOGINPassword</a></code>
+		<span class="tooltip"><p>Sends the LOGIN  <a href="#//api/name/password">password</a>, completing the login process</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/lastReponse" title="lastReponse"></a>
+	<h3 class="subsubtitle method-title">lastReponse</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The full text of the previous response</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy) NSString *lastReponse</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The full text of the previous response</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/message" title="message"></a>
+	<h3 class="subsubtitle method-title">message</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The contets of the message to send</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong) NSData *message</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The contets of the message to send</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/password" title="password"></a>
+	<h3 class="subsubtitle method-title">password</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The password for SMTP authentication</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy) NSString *password</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The password for SMTP authentication</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/port" title="port"></a>
+	<h3 class="subsubtitle method-title">port</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The TCP port to <a href="#//api/name/connect">connect</a> to</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger port</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The TCP port to <a href="#//api/name/connect">connect</a> to</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/recipientEmail" title="recipientEmail"></a>
+	<h3 class="subsubtitle method-title">recipientEmail</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The recipients email address</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy) NSString *recipientEmail</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The recipients email address</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/relayHost" title="relayHost"></a>
+	<h3 class="subsubtitle method-title">relayHost</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The host name of the SMTP relay</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy) NSString *relayHost</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The host name of the SMTP relay</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/senderEmail" title="senderEmail"></a>
+	<h3 class="subsubtitle method-title">senderEmail</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The email sender address</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy) NSString *senderEmail</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The email sender address</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/username" title="username"></a>
+	<h3 class="subsubtitle method-title">username</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The username for SMTP authentication</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy) NSString *username</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The username for SMTP authentication</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/begin" title="begin"></a>
+	<h3 class="subsubtitle method-title">begin</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Begin the finite state machine.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)begin</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Begin the finite state machine.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/connect" title="connect"></a>
+	<h3 class="subsubtitle method-title">connect</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Begin the connection. This will attempt to open the streams to the registered server and <a href="#//api/name/port">port</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)connect</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Begin the connection. This will attempt to open the streams to the registered server and <a href="#//api/name/port">port</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disconnect" title="disconnect"></a>
+	<h3 class="subsubtitle method-title">disconnect</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Close the connection and shut down the streams. Once the streams are shut down, you need to create a new object to start again.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)disconnect</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Close the connection and shut down the streams. Once the streams are shut down, you need to create a new object to start again.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithRelay:port:" title="initWithRelay:port:"></a>
+	<h3 class="subsubtitle method-title">initWithRelay:port:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The fully qualified domain name of the SMTP service.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithRelay:(NSString *)<em>fqdn</em> port:(NSInteger)<em>port</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fqdn</em></dt>
+			<dd><p>The fully qualified domain name of the SMTP service.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>port</em></dt>
+			<dd><p>The <a href="#//api/name/port">port</a> for the server.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithRelay:port:recipient:sender:message:" title="initWithRelay:port:recipient:sender:message:"></a>
+	<h3 class="subsubtitle method-title">initWithRelay:port:recipient:sender:message:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The fully qualified domain name of the SMTP service.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithRelay:(NSString *)<em>fqdn</em> port:(NSInteger)<em>port</em> recipient:(NSString *)<em>to</em> sender:(NSString *)<em>from</em> message:(NSData *)<em>message</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fqdn</em></dt>
+			<dd><p>The fully qualified domain name of the SMTP service.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>port</em></dt>
+			<dd><p>The <a href="#//api/name/port">port</a> for the server.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>to</em></dt>
+			<dd><p>The mail to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>from</em></dt>
+			<dd><p>The sender.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The <a href="#//api/name/message">message</a> body.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendAUTH" title="sendAUTH"></a>
+	<h3 class="subsubtitle method-title">sendAUTH</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends an AUTH command, with the parameter based on the value stored in authMethod</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendAUTH</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sends an AUTH command, with the parameter based on the value stored in authMethod</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendDATA" title="sendDATA"></a>
+	<h3 class="subsubtitle method-title">sendDATA</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Send the Data</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendDATA</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Send the Data</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendEHLO" title="sendEHLO"></a>
+	<h3 class="subsubtitle method-title">sendEHLO</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends an EHLO command using the local name</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendEHLO</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sends an EHLO command using the local name</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendLOGINPassword" title="sendLOGINPassword"></a>
+	<h3 class="subsubtitle method-title">sendLOGINPassword</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends the LOGIN  <a href="#//api/name/password">password</a>, completing the login process</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendLOGINPassword</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sends the LOGIN  <a href="#//api/name/password">password</a>, completing the login process</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendMAIL" title="sendMAIL"></a>
+	<h3 class="subsubtitle method-title">sendMAIL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends a MAIL FROM:<sender> command</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendMAIL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sends a MAIL FROM:<sender> command</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendMessage" title="sendMessage"></a>
+	<h3 class="subsubtitle method-title">sendMessage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>send the contents of the <a href="#//api/name/message">message</a>. This method automatically appends a CRLF.CRLF string at the end to
+mark the end of the <a href="#//api/name/message">message</a> to the server</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendMessage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>send the contents of the <a href="#//api/name/message">message</a>. This method automatically appends a CRLF.CRLF string at the end to
+mark the end of the <a href="#//api/name/message">message</a> to the server</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendQUIT" title="sendQUIT"></a>
+	<h3 class="subsubtitle method-title">sendQUIT</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends a QUIT command to the server. Note that the stream must be disconnected separately.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendQUIT</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sends a QUIT command to the server. Note that the stream must be disconnected separately.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendRCPT" title="sendRCPT"></a>
+	<h3 class="subsubtitle method-title">sendRCPT</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends a RCPT TO:<recipient> command</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendRCPT</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sends a RCPT TO:<recipient> command</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendSTARTTLS" title="sendSTARTTLS"></a>
+	<h3 class="subsubtitle method-title">sendSTARTTLS</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends a STARTTLS to the server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendSTARTTLS</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sends a STARTTLS to the server.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startCRAMMD5" title="startCRAMMD5"></a>
+	<h3 class="subsubtitle method-title">startCRAMMD5</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts a CRAM-MD5 authentication process. Currently unimplimented.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startCRAMMD5</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Starts a CRAM-MD5 authentication process. Currently unimplimented.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startLOGIN" title="startLOGIN"></a>
+	<h3 class="subsubtitle method-title">startLOGIN</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts a LOGIN process. The LOGIN method is a two-step process. This step sends the <a href="#//api/name/username">username</a>. <a href="#//api/name/sendLOGINPassword">sendLOGINPassword</a> sends the <a href="#//api/name/password">password</a> once the <a href="#//api/name/username">username</a> has been accepted.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startLOGIN</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Starts a LOGIN process. The LOGIN method is a two-step process. This step sends the <a href="#//api/name/username">username</a>. <a href="#//api/name/sendLOGINPassword">sendLOGINPassword</a> sends the <a href="#//api/name/password">password</a> once the <a href="#//api/name/username">username</a> has been accepted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startPLAIN" title="startPLAIN"></a>
+	<h3 class="subsubtitle method-title">startPLAIN</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts PLAIN login proces. The PLAIN login process is single-step, sending both <a href="#//api/name/username">username</a> and <a href="#//api/name/password">password</a> in a single transaction.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startPLAIN</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Starts PLAIN login proces. The PLAIN login process is single-step, sending both <a href="#//api/name/username">username</a> and <a href="#//api/name/password">password</a> in a single transaction.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startTLS" title="startTLS"></a>
+	<h3 class="subsubtitle method-title">startTLS</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Switches the state of the streams to sup<a href="#//api/name/port">port</a> TLSv1. This can be done during an active connection, such as during a STARTTLS connection</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startTLS</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Switches the state of the streams to sup<a href="#//api/name/port">port</a> TLSv1. This can be done during an active connection, such as during a STARTTLS connection</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">JSSMTPConnection.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Jetseven. All rights reserved. (Last updated: 2012-06-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
