@@ -33,24 +33,24 @@
 <h2>Intro</h2>
 
 <p>JSMailSender is a simple SMTP client for iOS and Mac OS X. If you need to send a quick
-email or two without activating the iOS mail app, this project should help you out. If
-you want to create the next great Mail client in IOS, keep looking. Or better yet,
-fork and extend this project.</p>
+email or two without activating the iOS mail app, this project should help you out. If you
+want to send thousands of marketing emails to your entire contact list, keep looking.</p>
 
 <h2>Rationale</h2>
 
-<p>For a while I have been maintaining a <a href="https://github.com/jetseven/skpsmtpmessage">fork</a>
-of the apparently abandoned <a href="http://code.google.com/p/skpsmtpmessage/">skpsmtpmessage</a>. 
-Based on the feedback on that project, it still fills a need. I wasted to make the library work better
-in the background, so I tried to integrate Quinn "The Eskimo!"'s class QRunLoopOperation,
-which elegantly combines NSRunLoop-based APIs with NSOperations. But I was finding it hard
-to make changes cleanly, mostly because of the complex conditional code used to manage the state
-of the SMTP connection. I decided to do away with all the manual condition checking and
-to use the <a href="http://smc.sourceforge.net/">State Machine Compiler</a> to
-generate the complex conditions of an SMTP connection. I decided the result was different
-enough to merit a new project. I hope that by basing the code
-on a state  machine, it will make it easier to accomodate new behaviors from mail server I haven't
-been able to test against.</p>
+<p>For a while I have been maintaining a <a
+href="https://github.com/jetseven/skpsmtpmessage">fork</a> of the apparently abandoned <a
+href="http://code.google.com/p/skpsmtpmessage/">skpsmtpmessage</a>. Based on the feedback
+on that project, it still fills a need. I wanted to make the library work better in the
+background, so I tried to integrate Quinn "The Eskimo!"'s class QRunLoopOperation, which
+elegantly combines NSRunLoop-based APIs with NSOperations. But I was finding it hard to
+make changes cleanly, partly because of the complex conditional code used to manage the
+state of the SMTP connection. I decided to do away with all the manual condition checking
+and to use the <a href="http://smc.sourceforge.net/">State Machine Compiler</a> to
+maintain the complex conditions of an SMTP connection. I decided the result was different
+enough to merit a new project. I hope that basing the code on a state  machine will
+make it easier to accomodate new behaviors from mail servers I haven't been able to test
+against.</p>
 
 <h2>Current Status</h2>
 
