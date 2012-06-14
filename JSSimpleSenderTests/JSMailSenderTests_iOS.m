@@ -16,6 +16,9 @@ NSString * const kTestServerName = @"mail.mac.com";
 - (void)setUp
 {
     [super setUp];
+    NSString *path = [NSString stringWithFormat:@"%s/JSSimpleSenderTests/ServerInfo.plist", __PROJECT_DIR__];
+    STAssertNotNil(path, @"Couldn't load server info file.");
+    _settings = [NSArray arrayWithContentsOfFile:path];
     done = NO;
 }
 
@@ -28,7 +31,19 @@ NSString * const kTestServerName = @"mail.mac.com";
 
 - (void)testConnection
 {
-    [_smtp connect];
+
+    NSDictionary *dict = [_settings objectAtIndex:0];
+    JSSMTPConnection *connection = [[JSSMTPConnection alloc] initWithRelay:[dict valueForKey:@"relayHost"]
+                                                                      port:[[dict valueForKey:@"port"] integerValue]];
+    connection.username = [dict valueForKey:@"username"];
+    connection.password =  [dict valueForKey:@"password"];
+    connection.recipientEmail = [dict valueForKey:@"recipientEmail"];
+    connection.senderEmail = [dict valueForKey:@"senderEmail"];
+    connection.message = [[dict valueForKey:@"message"] dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [connection begin];
+    
+
     STAssertTrue([self waitForCompletion:60], @"Timeout before done");
 }
 

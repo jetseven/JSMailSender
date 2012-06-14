@@ -12,5 +12,6 @@
 @interface JSMailSenderTests_iOS : SenTestCase {
     JSSMTPConnection *_smtp;
     BOOL done;
+    NSArray *_settings;
 }
 @end

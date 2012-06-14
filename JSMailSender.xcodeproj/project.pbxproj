@@ -27,11 +27,13 @@
 		AA7913F215812652002287EE /* JSSMTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79136A157A5FFE002287EE /* JSSMTPConnection.m */; };
 		AA7913F315812652002287EE /* QRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79137B157BCAA9002287EE /* QRunLoopOperation.m */; };
 		AA7913F415812652002287EE /* JSStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA791381157BCED0002287EE /* JSStreamOperation.m */; };
-		AAEF58FA1585A26E007CA49A /* ServerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAEF58F91585A26E007CA49A /* ServerInfo.plist */; };
 		AAEF59061587AC8E007CA49A /* JSMailSenderTests_OSX.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEF59051587AC8E007CA49A /* JSMailSenderTests_OSX.m */; };
-		AAF984941588CE9A001E984A /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF984931588CE9A001E984A /* NSDataAdditions.m */; };
-		AAF984951588CE9A001E984A /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF984931588CE9A001E984A /* NSDataAdditions.m */; };
 		AAF9849F1588FF94001E984A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF9849E1588FF94001E984A /* Foundation.framework */; };
+		AAF984C8158A3DB9001E984A /* ITBase64.c in Sources */ = {isa = PBXBuildFile; fileRef = AAF984C4158A3DB9001E984A /* ITBase64.c */; };
+		AAF984C9158A3DB9001E984A /* ITBase64.c in Sources */ = {isa = PBXBuildFile; fileRef = AAF984C4158A3DB9001E984A /* ITBase64.c */; };
+		AAF984CE158A3DB9001E984A /* ITBase64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF984C7158A3DB9001E984A /* ITBase64Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAF984CF158A3DB9001E984A /* ITBase64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF984C7158A3DB9001E984A /* ITBase64Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AAF984D0158A4079001E984A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF9849E1588FF94001E984A /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,10 +85,11 @@
 		AAEF58F91585A26E007CA49A /* ServerInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
 		AAEF59041587AC8E007CA49A /* JSMailSenderTests_OSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = JSMailSenderTests_OSX.h; sourceTree = "<group>"; };
 		AAEF59051587AC8E007CA49A /* JSMailSenderTests_OSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMailSenderTests_OSX.m; sourceTree = "<group>"; };
-		AAF984931588CE9A001E984A /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
-		AAF984971588CEC1001E984A /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		AAF9849E1588FF94001E984A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		AAF984BE1589B17C001E984A /* GlobalSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GlobalSettings.plist; sourceTree = "<group>"; };
+		AAF984C4158A3DB9001E984A /* ITBase64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ITBase64.c; path = "Base64-Additions/ITBase64.c"; sourceTree = SOURCE_ROOT; };
+		AAF984C5158A3DB9001E984A /* ITBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = ITBase64.h; path = "Base64-Additions/ITBase64.h"; sourceTree = SOURCE_ROOT; };
+		AAF984C6158A3DB9001E984A /* ITBase64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = ITBase64Additions.h; path = "Base64-Additions/ITBase64Additions.h"; sourceTree = SOURCE_ROOT; };
+		AAF984C7158A3DB9001E984A /* ITBase64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITBase64Additions.m; path = "Base64-Additions/ITBase64Additions.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF984D0158A4079001E984A /* Foundation.framework in Frameworks */,
 				AA7913DC158124EE002287EE /* SenTestingKit.framework in Frameworks */,
 				AA7913E0158124EE002287EE /* JSMailSenderOSX.framework in Frameworks */,
 			);
@@ -170,13 +174,11 @@
 				AA791381157BCED0002287EE /* JSStreamOperation.m */,
 				AA79137A157BCAA9002287EE /* QRunLoopOperation.h */,
 				AA79137B157BCAA9002287EE /* QRunLoopOperation.m */,
-				AAF984971588CEC1001E984A /* NSDataAdditions.h */,
-				AAF984931588CE9A001E984A /* NSDataAdditions.m */,
 				AA791346157A5ED0002287EE /* JSMailSender-Prefix.pch */,
 				AA7913CE158124ED002287EE /* JSMailSenderOSX-Info.plist */,
 				AA7913CF158124ED002287EE /* InfoPlist.strings */,
+				AAF984C2158A3D9C001E984A /* Base64 */,
 				AA7913A81580623D002287EE /* SMC */,
-				AAF984BE1589B17C001E984A /* GlobalSettings.plist */,
 			);
 			path = JSMailSender;
 			sourceTree = "<group>";
@@ -224,6 +226,17 @@
 				AA79135B157A5ED0002287EE /* InfoPlist.strings */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		AAF984C2158A3D9C001E984A /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				AAF984C5158A3DB9001E984A /* ITBase64.h */,
+				AAF984C4158A3DB9001E984A /* ITBase64.c */,
+				AAF984C6158A3DB9001E984A /* ITBase64Additions.h */,
+				AAF984C7158A3DB9001E984A /* ITBase64Additions.m */,
+			);
+			name = Base64;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA7913D1158124ED002287EE /* InfoPlist.strings in Resources */,
-				AAEF58FA1585A26E007CA49A /* ServerInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +455,8 @@
 				AA791384157BCED0002287EE /* JSStreamOperation.m in Sources */,
 				AA7913AD1580626F002287EE /* SMTP_sm.m in Sources */,
 				AA7913B315806296002287EE /* statemap.m in Sources */,
-				AAF984941588CE9A001E984A /* NSDataAdditions.m in Sources */,
+				AAF984C8158A3DB9001E984A /* ITBase64.c in Sources */,
+				AAF984CE158A3DB9001E984A /* ITBase64Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +477,8 @@
 				AA7913F215812652002287EE /* JSSMTPConnection.m in Sources */,
 				AA7913F315812652002287EE /* QRunLoopOperation.m in Sources */,
 				AA7913F415812652002287EE /* JSStreamOperation.m in Sources */,
-				AAF984951588CE9A001E984A /* NSDataAdditions.m in Sources */,
+				AAF984C9158A3DB9001E984A /* ITBase64.c in Sources */,
+				AAF984CF158A3DB9001E984A /* ITBase64Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +587,7 @@
 				DSTROOT = /tmp/JSMailSender.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JSMailSender/JSMailSender-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = JSMailSender;
 				SKIP_INSTALL = YES;
 			};
@@ -585,7 +599,7 @@
 				DSTROOT = /tmp/JSMailSender.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JSMailSender/JSMailSender-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = JSMailSender;
 				SKIP_INSTALL = YES;
 			};
@@ -599,8 +613,9 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSSimpleSender/JSSimpleSender-Prefix.pch";
+				GCC_PREFIX_HEADER = "JSMailSender/JSMailSender-Prefix.pch";
 				INFOPLIST_FILE = "JSSimpleSenderTests/JSMailSenderTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = JSMailSenderTests;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -614,8 +629,9 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSSimpleSender/JSSimpleSender-Prefix.pch";
+				GCC_PREFIX_HEADER = "JSMailSender/JSMailSender-Prefix.pch";
 				INFOPLIST_FILE = "JSSimpleSenderTests/JSMailSenderTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = JSMailSenderTests;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -676,7 +692,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSSimpleSender/JSSimpleSender-Prefix.pch";
+				GCC_PREFIX_HEADER = "JSMailSender/JSMailSender-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "JSSimpleSenderTests/JSMailSenderOSXTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -695,7 +711,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSSimpleSender/JSSimpleSender-Prefix.pch";
+				GCC_PREFIX_HEADER = "JSMailSender/JSMailSender-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "JSSimpleSenderTests/JSMailSenderOSXTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
