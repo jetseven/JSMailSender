@@ -243,7 +243,7 @@
             break;
         }
         default: {
-            DLog(@"Stream Event: Event: %ull", eventCode);
+            DLog(@"Stream Event: Event: %lu", eventCode);
             break;
         }
 
