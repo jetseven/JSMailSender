@@ -43,7 +43,6 @@
 @property (copy) NSString *password;
 
 @property (readonly) BOOL tls;
-@property (readonly) BOOL shouldStartTLS;
 
 @property (readonly) BOOL auth;
 @property (readonly) NSString *authMethod;

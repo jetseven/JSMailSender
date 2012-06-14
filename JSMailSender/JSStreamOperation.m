@@ -127,8 +127,6 @@
 //                             kCFStreamPropertySSLSettings, (__bridge CFTypeRef)settings);
 
     
-    NSDictionary *streamSettings = [NSDictionary dictionaryWithObjectsAndKeys:NSStreamSocketSecurityLevelTLSv1, NSStreamSocketSecurityLevelKey,
-                                    nil];
     [_inputStream setProperty:NSStreamSocketSecurityLevelTLSv1 forKey:NSStreamSocketSecurityLevelKey];
     [_outputStream setProperty:NSStreamSocketSecurityLevelTLSv1 forKey:NSStreamSocketSecurityLevelKey];
     [_inputStream open];

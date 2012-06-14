@@ -86,6 +86,7 @@
 		AAF984931588CE9A001E984A /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		AAF984971588CEC1001E984A /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		AAF9849E1588FF94001E984A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AAF984BE1589B17C001E984A /* GlobalSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GlobalSettings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +176,7 @@
 				AA7913CE158124ED002287EE /* JSMailSenderOSX-Info.plist */,
 				AA7913CF158124ED002287EE /* InfoPlist.strings */,
 				AA7913A81580623D002287EE /* SMC */,
+				AAF984BE1589B17C001E984A /* GlobalSettings.plist */,
 			);
 			path = JSMailSender;
 			sourceTree = "<group>";
@@ -400,7 +402,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "java -jar $PROJECT_DIR/smc/bin/Smc.jar -objc -d $PROJECT_DIR/JSMailSender JSMailSender/SMTP.sm";
+			shellScript = "if [ -f $PROJECT_DIR/smc/bin/Smc.jar ]; then\njava -jar $PROJECT_DIR/smc/bin/Smc.jar -objc -d $PROJECT_DIR/JSMailSender JSMailSender/SMTP.sm\nelse\necho \"${PROJECT_DIR}/JSMailSender/SMTP.sm:1: warning: SMC not found at ${PROJECT_DIR}/smc. State Machine not compiled.\"\nfi\n\n";
+			showEnvVarsInLog = 0;
 		};
 		AA7913D9158124EE002287EE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -426,7 +429,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "java -jar $PROJECT_DIR/smc/bin/Smc.jar -objc -d $PROJECT_DIR/JSMailSender JSMailSender/SMTP.sm";
+			shellScript = "if [ -f $PROJECT_DIR/smc/bin/Smc.jar ]; then\njava -jar $PROJECT_DIR/smc/bin/Smc.jar -objc -d $PROJECT_DIR/JSMailSender JSMailSender/SMTP.sm\nelse\necho \"${PROJECT_DIR}/JSMailSender/SMTP.sm:1: warning: SMC not found at ${PROJECT_DIR}/smc. State Machine not compiled.\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
