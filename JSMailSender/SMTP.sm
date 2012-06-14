@@ -44,7 +44,7 @@ WaitingMAILReply
         sendMAIL();
     }
     {
-    success(asf:int)
+    success
         WaitingRCPTReply{ }
     error
         nil {}
