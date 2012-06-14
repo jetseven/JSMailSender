@@ -63,7 +63,7 @@ Acknowledgments
 Apple DTS in general and Quinn in particular. The QRunLoopOperation class is copied
 without modifications.
 
-Colloquy project, for the Base64 code.
+[ithron/Base64-Additions](https://github.com/ithron/Base64-Additions)
 
 Ian Baird, for sksmtpmessage. Even though I created a new project, I still looked at his
 code for a sanity check.
