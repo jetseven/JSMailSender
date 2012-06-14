@@ -14,7 +14,7 @@ Rationale
 
 For a while I have been maintaining a [fork](https://github.com/jetseven/skpsmtpmessage)
 of the apparently abandoned [skpsmtpmessage](http://code.google.com/p/skpsmtpmessage/). 
-Based on the feedback on that project, it still fills a need. I wasted to make the library work better
+Based on the feedback on that project, it still fills a need. I wanted to make the library work better
 in the background, so I tried to integrate Quinn "The Eskimo!"'s class QRunLoopOperation,
 which elegantly combines NSRunLoop-based APIs with NSOperations. But I was finding it hard
 to make changes cleanly, mostly because of the complex conditional code used to manage the state

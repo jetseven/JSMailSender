@@ -215,6 +215,10 @@
 {
     [self Default:context];
 }
+- (void)success:(SMTPContext*)context :(int)asf;
+{
+    [self Default:context];
+}
 
 - (void)Default:(SMTPContext*)context;
 {
@@ -322,7 +326,7 @@
     [[context state] Entry:context];
 }
 
-- (void)success:(SMTPContext*)context;
+- (void)success:(SMTPContext*)context :(int)asf;
 {
     [[context state] Exit:context];
     [context setState:[JSSMTPMap WaitingRCPTReply]];
@@ -625,6 +629,11 @@
 - (void)success;
 {
     [[self state] success:self];
+}
+
+- (void)success:(int)asf;
+{
+    [[self state] success:self :asf];
 }
 @end
 

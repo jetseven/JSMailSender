@@ -42,6 +42,7 @@
 - (void)error:(SMTPContext*)context;
 - (void)failure:(SMTPContext*)context;
 - (void)success:(SMTPContext*)context;
+- (void)success:(SMTPContext*)context :(int)asf;
 
 - (void)Default:(SMTPContext*)context;
 @end
@@ -90,7 +91,7 @@
  -(void)Entry:(SMTPContext*)context;
 - (void)error:(SMTPContext*)context;
 - (void)failure:(SMTPContext*)context;
-- (void)success:(SMTPContext*)context;
+- (void)success:(SMTPContext*)context :(int)asf;
 @end
 
 @interface JSSMTPMap_WaitingRCPTReply : JSSMTPMap_Default
@@ -207,6 +208,7 @@
 - (void)error;
 - (void)failure;
 - (void)success;
+- (void)success:(int)asf;
 @end
 
 

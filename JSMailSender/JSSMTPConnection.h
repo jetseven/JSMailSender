@@ -50,7 +50,7 @@ typedef void (^JSSMTPResponseCallback)(id response, NSError *error);
 @property (readonly) NSString *authMethod;
 @property (readonly) BOOL eightBitMime;
 
-@property (strong) void (^completionHandler) (NSError **error);
+@property (strong) void (^completionHandler)(NSError **error);
 
 /** @name Creating and Initializing Connections */
 
@@ -72,8 +72,10 @@ typedef void (^JSSMTPResponseCallback)(id response, NSError *error);
 
 /** @name Managing the connection */
 
-/** Begin the finite state machine. */
-- (void)begin;
+/** Begin the finite state machine. If all the necessary properties are set, the connection will open the connection, take
+ all appropriate action to send the mail, and close the connection.*/
+- (void)beginWithCompletion:(void(^)(NSError *error))completionHandler;
+
 /** Begin the connection. This will attempt to open the streams to the registered server and port */
 - (void)connect;
 /** Close the connection and shut down the streams. Once the streams are shut down, you need to create a new object to start again. */

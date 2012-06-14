@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>relayHost</key>
+		<string>smtp.mail.yahoo.com</string>
+		<key>port</key>
+		<integer>587</integer>
+		<key>username</key>
+		<string>youremail@yahoo.com</string>
+		<key>password</key>
+		<string>secret</string>
+		<key>recipientEmail</key>
+		<string>somebodyelse@gmail.com</string>
+		<key>senderEmail</key>
+		<string>youremail@yahoo.com</string>
+		<key>message</key>
+		<string>Subject: Test
+From: &lt;sgbrokaw@yahoo.com&gt;
+To: &lt;brokaw@mac.com&gt;
+
+
+This is a test message</string>
+	</dict>
+	<dict>
+		<key>relayHost</key>
+		<string>smtp.gmail.com</string>
+		<key>port</key>
+		<integer>587</integer>
+		<key>username</key>
+		<string>youremail@gmail.com</string>
+		<key>password</key>
+		<string>secret</string>
+		<key>recipientEmail</key>
+		<string>somebodyelse@yahoo.com</string>
+		<key>senderEmail</key>
+		<string>youremail@gmail.com</string>
+		<key>message</key>
+		<string>Subject: Test
+From: &lt;youremail@gmail.com&gt;
+To: &lt;somebodyelse@yahoo.com&gt;
+
+This is a text message</string>
+	</dict>
+	<dict>
+		<key>relayHost</key>
+		<string>smtp.me.com</string>
+		<key>port</key>
+		<integer>587</integer>
+		<key>username</key>
+		<string>youremail@me.com</string>
+		<key>password</key>
+		<string>secret</string>
+		<key>recipientEmail</key>
+		<string>somebodyelse@yahoo.com</string>
+		<key>senderEmail</key>
+		<string>youremail@me.com</string>
+		<key>message</key>
+		<string>Subject: Test
+From: &lt;youremail@me.com&gt;
+To: &lt;somebodyelse@yahoo.com&gt;</string>
+	</dict>
+</array>
+</plist>
