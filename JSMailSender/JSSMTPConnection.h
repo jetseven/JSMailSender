@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "JSStreamOperation.h"
 
-typedef void (^JSSMTPResponseCallback)(id response, NSError *error);
+@class JSSMTPConnection;
 
 /** JSSMTPConnection objects are meant to be one-use objects used to send mail. The basic use of this class is
  to populate all the propertes with the necessary values and then send the using the methods mapped to the basic
@@ -32,7 +32,6 @@ typedef void (^JSSMTPResponseCallback)(id response, NSError *error);
 
 /** The recipients email address */
 @property (copy) NSString *recipientEmail;
-@property NSArray *recipientList;
 
 /** The contets of the message to send */
 @property (strong) NSData *message;
@@ -49,8 +48,6 @@ typedef void (^JSSMTPResponseCallback)(id response, NSError *error);
 @property (readonly) BOOL auth;
 @property (readonly) NSString *authMethod;
 @property (readonly) BOOL eightBitMime;
-
-@property (strong) void (^completionHandler)(NSError **error);
 
 /** @name Creating and Initializing Connections */
 
@@ -74,7 +71,7 @@ typedef void (^JSSMTPResponseCallback)(id response, NSError *error);
 
 /** Begin the finite state machine. If all the necessary properties are set, the connection will open the connection, take
  all appropriate action to send the mail, and close the connection.*/
-- (void)beginWithCompletion:(void(^)(NSError *error))completionHandler;
+- (void)begin;
 
 /** Begin the connection. This will attempt to open the streams to the registered server and port */
 - (void)connect;

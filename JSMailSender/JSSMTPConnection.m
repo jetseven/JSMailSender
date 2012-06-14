@@ -56,7 +56,6 @@
 @synthesize auth = _auth;
 @synthesize authMethod = _authMethod;
 @synthesize eightBitMime = _eightBitMime;
-@synthesize completionHandler = _completionHandler;
 
 - (id)initWithRelay:(NSString *)fqdn port:(NSInteger)port recipient:(NSString *)to sender:(NSString *)from message:(NSData *)message
 {
@@ -103,20 +102,6 @@
     }
     return _TLSAvailable && !_TLSActive;
 }
-
-- (void)beginWithCompletion:(void(^)(NSError *error))completionHandler
-{
-    @synchronized(self) {
-        self.completionHandler = completionHandler;
-        if (_op.state == kQRunLoopOperationStateExecuting) {
-            [_fsm enterStartState];
-        } else {
-            DLog(@"Not ready to begin");
-            self.beginWhenAvailable = YES;
-        }
-    }
-}
-
 
 - (void)begin
 {
