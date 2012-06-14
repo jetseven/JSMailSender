@@ -502,11 +502,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p><
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The full text of the previous response</p>
-	</div>
-	
 	
 	
 	
@@ -542,11 +537,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p><
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The contets of the message to send</p>
-	</div>
 	
 	
 	
@@ -584,11 +574,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p><
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The password for SMTP authentication</p>
-	</div>
-	
 	
 	
 	
@@ -624,11 +609,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p><
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The TCP port to <a href="#//api/name/connect">connect</a> to</p>
-	</div>
 	
 	
 	
@@ -666,11 +646,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p><
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The recipients email address</p>
-	</div>
-	
 	
 	
 	
@@ -706,11 +681,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p><
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The host name of the SMTP relay</p>
-	</div>
 	
 	
 	
@@ -748,11 +718,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p><
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The email sender address</p>
-	</div>
-	
 	
 	
 	
@@ -788,11 +753,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p><
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The username for SMTP authentication</p>
-	</div>
 	
 	
 	
@@ -841,12 +801,6 @@ all appropriate action to send the mail, and close the connection.</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Begin the finite state machine. If all the necessary properties are set, the connection will open the connection, take
-all appropriate action to send the mail, and close the connection.</p>
-	</div>
-	
 	
 	
 	
@@ -883,11 +837,6 @@ all appropriate action to send the mail, and close the connection.</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Begin the connection. This will attempt to open the streams to the registered server and <a href="#//api/name/port">port</a></p>
-	</div>
-	
 	
 	
 	
@@ -923,11 +872,6 @@ all appropriate action to send the mail, and close the connection.</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Close the connection and shut down the streams. Once the streams are shut down, you need to create a new object to start again.</p>
-	</div>
 	
 	
 	
@@ -1082,11 +1026,6 @@ all appropriate action to send the mail, and close the connection.</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Sends an AUTH command, with the parameter based on the value stored in authMethod</p>
-	</div>
-	
 	
 	
 	
@@ -1122,11 +1061,6 @@ all appropriate action to send the mail, and close the connection.</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Send the Data</p>
-	</div>
 	
 	
 	
@@ -1164,11 +1098,6 @@ all appropriate action to send the mail, and close the connection.</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Sends an EHLO command using the local name</p>
-	</div>
-	
 	
 	
 	
@@ -1205,11 +1134,6 @@ all appropriate action to send the mail, and close the connection.</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Sends the LOGIN  <a href="#//api/name/password">password</a>, completing the login process</p>
-	</div>
-	
 	
 	
 	
@@ -1245,11 +1169,6 @@ all appropriate action to send the mail, and close the connection.</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Sends a MAIL FROM:<sender> command</p>
-	</div>
 	
 	
 	
@@ -1288,12 +1207,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>send the contents of the <a href="#//api/name/message">message</a>. This method automatically appends a CRLF.CRLF string at the end to
-mark the end of the <a href="#//api/name/message">message</a> to the server</p>
-	</div>
-	
 	
 	
 	
@@ -1329,11 +1242,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Sends a QUIT command to the server. Note that the stream must be disconnected separately.</p>
-	</div>
 	
 	
 	
@@ -1371,11 +1279,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Sends a RCPT TO:<recipient> command</p>
-	</div>
-	
 	
 	
 	
@@ -1411,11 +1314,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Sends a STARTTLS to the server.</p>
-	</div>
 	
 	
 	
@@ -1453,11 +1351,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Starts a CRAM-MD5 authentication process. Currently unimplimented.</p>
-	</div>
-	
 	
 	
 	
@@ -1493,11 +1386,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Starts a LOGIN process. The LOGIN method is a two-step process. This step sends the <a href="#//api/name/username">username</a>. <a href="#//api/name/sendLOGINPassword">sendLOGINPassword</a> sends the <a href="#//api/name/password">password</a> once the <a href="#//api/name/username">username</a> has been accepted.</p>
-	</div>
 	
 	
 	
@@ -1535,11 +1423,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p>
 	
 	
 	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Starts PLAIN login proces. The PLAIN login process is single-step, sending both <a href="#//api/name/username">username</a> and <a href="#//api/name/password">password</a> in a single transaction.</p>
-	</div>
-	
 	
 	
 	
@@ -1575,11 +1458,6 @@ mark the end of the <a href="#//api/name/message">message</a> to the server</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Switches the state of the streams to sup<a href="#//api/name/port">port</a> TLSv1. This can be done during an active connection, such as during a STARTTLS connection</p>
-	</div>
 	
 	
 	
