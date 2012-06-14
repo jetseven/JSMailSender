@@ -9,6 +9,9 @@ email or two without activating the iOS mail app, this project should help you o
 you want to create the next great Mail client in IOS, keep looking. Or better yet,
 fork and extend this project.
 
+See the [project page](http://jetseven.github.com/JSMailSender/) for more information and
+documentation.
+
 Rationale
 ------
 
