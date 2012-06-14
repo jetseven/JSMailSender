@@ -10,7 +10,8 @@
 #import "JSStreamOperation.h"
 #import "JSUtilities.h"
 #import "SMTP_sm.h"
-#import "NSDataAdditions.h"
+//#import "NSDataAdditions.h"
+#import "ITBase64Additions.h"
 
 #pragma mark -
 
@@ -157,23 +158,22 @@
     //NSString *authStr = [NSString stringWithFormat:@"%@\0%@\0%@", self.username, self.username, self.password];
     NSString *authStr = [NSString stringWithFormat:@"%@\0%@\0%@", self.username, self.username, self.password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
-    DLog(@"Collouquy str;: %@", [authData base64Encoding]);
-    //DLog(@"Gemell str: %@", [authData base64EncodedString]);
-    [_op putCommand:[authData base64Encoding]];
+    DLog(@"Collouquy str;: %@", [authData base64EncodedString]);
+    [_op putCommand:[authData base64EncodedString]];
 }
 
 - (void)startLOGIN
 {
 
     NSData *data = [self.username dataUsingEncoding:NSUTF8StringEncoding];
-    [_op putCommand:[data base64Encoding]];
+    [_op putCommand:[data base64EncodedString]];
     
 }
 
 - (void)sendLOGINPassword
 {
     NSData *data = [self.password dataUsingEncoding:NSUTF8StringEncoding];
-    [_op putCommand:[data base64Encoding]];
+    [_op putCommand:[data base64EncodedString]];
 }
 
 - (void)startCRAMMD5

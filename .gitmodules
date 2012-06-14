@@ -1,0 +1,3 @@
+[submodule "Base64-Additions"]
+	path = Base64-Additions
+	url = git://github.com/ithron/Base64-Additions.git
