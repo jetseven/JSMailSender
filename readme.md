@@ -32,7 +32,7 @@ Current Status
 ------
 
 The project will build and send mail. I am able to send mail using iCloud (me.com),
-Gmail, and Yahoo! That said, there is still work to do.
+Gmail, and Yahoo! Other mail servers that support PLAIN or LOGIN auth methods should work as well..
 
 **Working features**
 
@@ -43,9 +43,6 @@ Gmail, and Yahoo! That said, there is still work to do.
 **Unimplemented or incomplete, but planned**
 
 * No CRAM-MD5 authentication
-* State Machine is incomplete.
-    * Some transitions will leave a stream hanging in the open state.
-    * Some transitions will throw an exception.
 * Should be better integrated with the reachability APIs on iOS.
 * Gracefully handle network timeouts.
 * Documentation
