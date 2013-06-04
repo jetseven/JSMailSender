@@ -64,6 +64,7 @@
 @interface JSSMTPMap_Default : JSSMTPConnectionState
 {
 }
+- (void)Default:(SMTPContext*)context;
 @end
 
 @interface JSSMTPMap_Connecting : JSSMTPMap_Default
@@ -80,7 +81,6 @@
 }
  -(void)Entry:(SMTPContext*)context;
 - (void)authenticated:(SMTPContext*)context;
-- (void)failure:(SMTPContext*)context;
 - (void)success:(SMTPContext*)context;
 @end
 
@@ -88,8 +88,6 @@
 {
 }
  -(void)Entry:(SMTPContext*)context;
-- (void)error:(SMTPContext*)context;
-- (void)failure:(SMTPContext*)context;
 - (void)success:(SMTPContext*)context;
 @end
 
@@ -97,8 +95,6 @@
 {
 }
  -(void)Entry:(SMTPContext*)context;
-- (void)error:(SMTPContext*)context;
-- (void)failure:(SMTPContext*)context;
 - (void)success:(SMTPContext*)context;
 @end
 
@@ -126,16 +122,14 @@
 @interface JSSMTPMap_SendingData : JSSMTPMap_Default
 {
 }
-- (void)error:(SMTPContext*)context;
-- (void)failure:(SMTPContext*)context;
-- (void)success:(SMTPContext*)context;
+ -(void)Entry:(SMTPContext*)context;
 @end
 
 @interface JSSMTPMap_ReadyToQuit : JSSMTPMap_Default
 {
 }
  -(void)Entry:(SMTPContext*)context;
-- (void)success:(SMTPContext*)context;
+- (void)Default:(SMTPContext*)context;
 @end
 
 @interface JSSMTPMap_Disconnected : JSSMTPMap_Default

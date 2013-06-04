@@ -30,13 +30,16 @@ WaitingEHLOReply
     }
 {
     success [ctxt.tls]
+        //if -[JSSMTPConnection tls] == YES
         WaitingSTARTTLSReply { }
     success [ctxt.auth]
+        //if -[JSSMTPConnection auth] == YES
         push(JSSMTPAuthMap::StartingAuth) {  }
+    success
+        //EHLO responsded, but without either TLS or AUTH options
+        ReadyToQuit {}
     authenticated
         WaitingMAILReply {}
-    failure
-        ReadyToQuit {}
 }
 
 WaitingMAILReply
@@ -46,10 +49,6 @@ WaitingMAILReply
     {
     success
         WaitingRCPTReply{ }
-    error
-        nil {}
-    failure
-        Disconnected {}
 }
 
 WaitingRCPTReply
@@ -59,10 +58,6 @@ WaitingRCPTReply
 {
     success
         WaitingDATAReply { }
-    error
-        Disconnected {}
-    failure
-        Disconnected {}
 }
 
 WaitingSTARTTLSReply
@@ -74,39 +69,42 @@ WaitingSTARTTLSReply
 TLSStarting 
     Entry { startTLS(); }
 {
-        success WaitingEHLOReply {  }
+        success
+            WaitingEHLOReply {  }
 }
 
 WaitingDATAReply 
     Entry { sendDATA(); }
     {
-        success SendingData { sendMessage(); }
+        success SendingData { }
     }
 
-SendingData {
-    success
-        ReadyToQuit { }
-    error
-        nil {}
-    failure
-        Disconnected { 
-                    sendQUIT();}
-}
+SendingData 
+    Entry { sendMessage();  }
+    {
+    }   
 
 ReadyToQuit 
     Entry { sendQUIT(); }
 {
-    success
+    Default
         Disconnected {  }
 }
 
 Disconnected 
     Entry {
-    disconnect();
+        disconnect();
     }
 {
     Default nil {}
 }
+
+Default 
+{
+    Default
+        ReadyToQuit {  }
+}
+
 
 %%
 
@@ -115,8 +113,8 @@ Disconnected
 StartingAuth
     Entry { sendAUTH(); }
 {
-    success [[ctxt.authMethod isEqualToString:@"CRAM-MD5"]]
-        WaitingCRAMMD5Reply { startCRAMMD5(); }
+//    success [[ctxt.authMethod isEqualToString:@"CRAM-MD5"]]
+//        WaitingCRAMMD5Reply { startCRAMMD5(); }
     success [[ctxt.authMethod isEqualToString:@"LOGIN"]]
         WaitingLOGINReply { startLOGIN(); }
     success [[ctxt.authMethod isEqualToString:@"PLAIN"]]

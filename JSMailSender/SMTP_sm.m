@@ -224,6 +224,13 @@
 
 
 @implementation JSSMTPMap_Default
+
+- (void)Default:(SMTPContext*)context;
+{
+    [[context state] Exit:context];
+    [context setState:[JSSMTPMap ReadyToQuit]];
+    [[context state] Entry:context];
+}
 @end
 @implementation JSSMTPMap_Connecting
 - (void)Entry:(SMTPContext*)context;
@@ -272,13 +279,6 @@
     [[context state] Entry:context];
 }
 
-- (void)failure:(SMTPContext*)context;
-{
-    [[context state] Exit:context];
-    [context setState:[JSSMTPMap ReadyToQuit]];
-    [[context state] Entry:context];
-}
-
 - (void)success:(SMTPContext*)context;
 {
     JSSMTPConnection *ctxt = [context owner];
@@ -295,9 +295,12 @@
         // No actions.
         [context pushState:[JSSMTPAuthMap StartingAuth]];
         [[context state] Entry:context];
-    }    else
+    }
+    else
     {
-         [super success:context];
+        [[context state] Exit:context];
+        [context setState:[JSSMTPMap ReadyToQuit]];
+        [[context state] Entry:context];
     }
 }
 @end
@@ -309,17 +312,6 @@
     JSSMTPConnection *ctxt = [context owner];
 
     [ctxt sendMAIL];
-}
-
-- (void)error:(SMTPContext*)context;
-{
-}
-
-- (void)failure:(SMTPContext*)context;
-{
-    [[context state] Exit:context];
-    [context setState:[JSSMTPMap Disconnected]];
-    [[context state] Entry:context];
 }
 
 - (void)success:(SMTPContext*)context;
@@ -337,20 +329,6 @@
     JSSMTPConnection *ctxt = [context owner];
 
     [ctxt sendRCPT];
-}
-
-- (void)error:(SMTPContext*)context;
-{
-    [[context state] Exit:context];
-    [context setState:[JSSMTPMap Disconnected]];
-    [[context state] Entry:context];
-}
-
-- (void)failure:(SMTPContext*)context;
-{
-    [[context state] Exit:context];
-    [context setState:[JSSMTPMap Disconnected]];
-    [[context state] Entry:context];
 }
 
 - (void)success:(SMTPContext*)context;
@@ -406,36 +384,19 @@
 
 - (void)success:(SMTPContext*)context;
 {
-    JSSMTPConnection *ctxt = [context owner];
     [[context state] Exit:context];
-    [context clearState];
-    [ctxt sendMessage];
     [context setState:[JSSMTPMap SendingData]];
     [[context state] Entry:context];
 }
 @end
 
 @implementation JSSMTPMap_SendingData
+- (void)Entry:(SMTPContext*)context;
 
-- (void)error:(SMTPContext*)context;
-{
-}
-
-- (void)failure:(SMTPContext*)context;
 {
     JSSMTPConnection *ctxt = [context owner];
-    [[context state] Exit:context];
-    [context clearState];
-    [ctxt sendQUIT];
-    [context setState:[JSSMTPMap Disconnected]];
-    [[context state] Entry:context];
-}
 
-- (void)success:(SMTPContext*)context;
-{
-    [[context state] Exit:context];
-    [context setState:[JSSMTPMap ReadyToQuit]];
-    [[context state] Entry:context];
+    [ctxt sendMessage];
 }
 @end
 
@@ -448,7 +409,7 @@
     [ctxt sendQUIT];
 }
 
-- (void)success:(SMTPContext*)context;
+- (void)Default:(SMTPContext*)context;
 {
     [[context state] Exit:context];
     [context setState:[JSSMTPMap Disconnected]];
@@ -485,16 +446,7 @@
 - (void)success:(SMTPContext*)context;
 {
     JSSMTPConnection *ctxt = [context owner];
-    if ([ctxt.authMethod isEqualToString:@"CRAM-MD5"])
-    {
-        [[context state] Exit:context];
-        [context clearState];
-        [ctxt startCRAMMD5];
-        [context setState:[JSSMTPAuthMap WaitingCRAMMD5Reply]];
-        [[context state] Entry:context];
-    }
-    else if ([ctxt.authMethod isEqualToString:@"LOGIN"])
-
+    if ([ctxt.authMethod isEqualToString:@"LOGIN"])
     {
         [[context state] Exit:context];
         [context clearState];
