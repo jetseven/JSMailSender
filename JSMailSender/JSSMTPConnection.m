@@ -155,10 +155,8 @@
 
 - (void)startPLAIN
 {
-    //NSString *authStr = [NSString stringWithFormat:@"%@\0%@\0%@", self.username, self.username, self.password];
     NSString *authStr = [NSString stringWithFormat:@"%@\0%@\0%@", self.username, self.username, self.password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
-    DLog(@"Collouquy str;: %@", [authData base64EncodedString]);
     [_op putCommand:[authData base64EncodedString]];
 }
 
