@@ -96,10 +96,6 @@ sendEHLO();
         <td>
         </td>
         <td>
-          <pre>
-  ReadyToQuit
-  {}
-          </pre>
         </td>
         <td>
           <pre>
@@ -109,6 +105,9 @@ sendEHLO();
 
 [ctxt.auth]
   push(JSSMTPMap::WaitingEHLOReply)
+  {}
+
+  ReadyToQuit
   {}
           </pre>
         </td>
@@ -129,16 +128,8 @@ sendMAIL();
         <td>
         </td>
         <td>
-          <pre>
-  WaitingMAILReply
-  {}
-          </pre>
         </td>
         <td>
-          <pre>
-  Disconnected
-  {}
-          </pre>
         </td>
         <td>
           <pre>
@@ -163,16 +154,8 @@ sendRCPT();
         <td>
         </td>
         <td>
-          <pre>
-  Disconnected
-  {}
-          </pre>
         </td>
         <td>
-          <pre>
-  Disconnected
-  {}
-          </pre>
         </td>
         <td>
           <pre>
@@ -255,9 +238,7 @@ sendDATA();
         <td>
           <pre>
   SendingData
-  {
-    sendMessage();
-  }
+  {}
           </pre>
         </td>
         <td>
@@ -268,30 +249,19 @@ sendDATA();
           SendingData
         </td>
         <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
           <pre>
-  SendingData
-  {}
+sendMessage();
           </pre>
         </td>
         <td>
-          <pre>
-  Disconnected
-  {
-    sendQUIT();
-  }
-          </pre>
         </td>
         <td>
-          <pre>
-  ReadyToQuit
-  {}
-          </pre>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
         </td>
         <td>
         </td>
@@ -302,8 +272,10 @@ sendDATA();
         </td>
         <td>
           <pre>
-    sendQUIT();
+sendQUIT();
           </pre>
+        </td>
+        <td>
         </td>
         <td>
         </td>
@@ -319,8 +291,6 @@ sendDATA();
   {}
           </pre>
         </td>
-        <td>
-        </td>
       </tr>
       <tr>
         <td>
@@ -328,7 +298,7 @@ sendDATA();
         </td>
         <td>
           <pre>
-    disconnect();
+disconnect();
           </pre>
         </td>
         <td>
@@ -388,7 +358,7 @@ sendDATA();
         </td>
         <td>
           <pre>
-    sendAUTH();
+sendAUTH();
           </pre>
         </td>
         <td>
@@ -397,12 +367,6 @@ sendDATA();
         </td>
         <td>
           <pre>
-[[ctxt.authMethod isEqualToString:@"CRAM-MD5"]]
-  WaitingCRAMMD5Reply
-  {
-    startCRAMMD5();
-  }
-
 [[ctxt.authMethod isEqualToString:@"LOGIN"]]
   WaitingLOGINReply
   {
