@@ -10,7 +10,6 @@
 #import "JSStreamOperation.h"
 #import "JSUtilities.h"
 #import "SMTP_sm.h"
-//#import "NSDataAdditions.h"
 #import "ITBase64Additions.h"
 
 #pragma mark -
@@ -68,7 +67,6 @@
         [_runLoopThread start];
         _op.runLoopThread = _runLoopThread;
         [[NSOperationQueue mainQueue] addOperation:_op];
-        //[_op start];
         _fsm = [[SMTPContext alloc] initWithOwner:self];
         _fsm.debugFlag = YES;
         _relay = fqdn;
@@ -126,7 +124,12 @@
 - (void)sendEHLO
 {
     NSAssert(self.relayHost, @"Tried to connect to nil host name");
-    [_op putCommand:[NSString stringWithFormat:@"EHLO Bighead.local"]];
+    long maxLen = sysconf(_SC_HOST_NAME_MAX) + 1;
+    char *hostname = calloc(maxLen, sizeof(char));
+    if (gethostname(hostname, 256))
+        strlcpy(hostname, "localhost", sizeof(char) * maxLen);
+    [_op putCommand:[NSString stringWithFormat:@"EHLO %s", hostname]];
+    free(hostname);
 }
 - (void)sendMAIL
 {
