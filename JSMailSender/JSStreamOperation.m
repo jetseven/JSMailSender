@@ -231,7 +231,6 @@
         }
             
         case NSStreamEventHasSpaceAvailable: {
-            //DLog(@"Stream Event: Space Available");
             [self.delegate writeStreamSpaceAvailable];
             break;
         }
@@ -243,7 +242,7 @@
             break;
         }
         default: {
-            DLog(@"Stream Event: Event: %lu", eventCode);
+            DLog(@"Stream Event: Event: %u", eventCode);
             break;
         }
 

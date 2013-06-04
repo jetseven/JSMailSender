@@ -275,7 +275,6 @@
 
 - (void)writeStreamSpaceAvailable
 {
-    DLog(@"Space available");
     if ([_fsm.state isMemberOfClass:[JSSMTPMap_TLSStarting class]]) {
         _TLSActive = YES;
         [_fsm success];
